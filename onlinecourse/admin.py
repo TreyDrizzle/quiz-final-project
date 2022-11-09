@@ -24,6 +24,7 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
 
 
+
 class LessonAdmin(admin.ModelAdmin):
     list_display = ['title']
 
