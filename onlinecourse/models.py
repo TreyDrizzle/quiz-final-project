@@ -1,7 +1,8 @@
 import sys
 from django.utils.timezone import now
 try:
-    from django.db import models
+    from .models import Course, Enrollment, Question, Choice, Submission  
+
 except Exception:
     print("There was an error loading django modules. Do you have django installed?")
     sys.exit()
@@ -103,7 +104,7 @@ class Enrollment(models.Model):
     # Other fields and methods you would like to design
 class Question(models.Model):
     # Foreign key to lesson
-    Course = models.ForeignKey(Course, on_delete = models.CASCADE)
+    course = models.ForeignKey(Course, on_delete = models.CASCADE)
     # question text
     question_text = models.TextField()
     # question grade/mark
